@@ -71,7 +71,6 @@ public class OmniVibe{
             case HapticFeedbackConstants.KEYBOARD_RELEASE:
             case HapticFeedbackConstants.TEXT_HANDLE_MOVE:
             case HapticFeedbackConstants.VIRTUAL_KEY_RELEASE:
-            case HapticFeedbackConstants.ENTRY_BUMP:
             case HapticFeedbackConstants.DRAG_CROSSING:
             case HapticFeedbackConstants.GESTURE_END:
                 return VibrationEffect.get(VibrationEffect.EFFECT_TICK, false);
