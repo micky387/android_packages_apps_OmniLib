@@ -42,12 +42,24 @@ import android.view.WindowManagerGlobal;
 
 public class OmniUtils {
 
+    /**
+     * @hide
+     */
     public static final String SYSTEMUI_PACKAGE_NAME = "com.android.systemui";
 
+    /**
+     * @hide
+     */
     public static final String ACTION_DISMISS_KEYGUARD = SYSTEMUI_PACKAGE_NAME +".ACTION_DISMISS_KEYGUARD";
 
+    /**
+     * @hide
+     */
     public static final String DISMISS_KEYGUARD_EXTRA_INTENT = "launch";
 
+    /**
+     * @hide
+     */
     public static void launchKeyguardDismissIntent(Context context, UserHandle user, Intent launchIntent) {
         Intent keyguardIntent = new Intent(ACTION_DISMISS_KEYGUARD);
         keyguardIntent.setPackage(SYSTEMUI_PACKAGE_NAME);
@@ -55,10 +67,16 @@ public class OmniUtils {
         context.sendBroadcastAsUser(keyguardIntent, user);
     }
 
+    /**
+     * @hide
+     */
     public static void sendKeycode(int keycode) {
         sendKeycode(keycode, false);
     }
 
+    /**
+     * @hide
+     */
     public static void sendKeycode(int keycode, boolean longpress) {
         long when = SystemClock.uptimeMillis();
         final KeyEvent evDown = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, keycode, 0,
