@@ -84,15 +84,15 @@ public class ChargingControlController extends OmniRomHealthFeature {
 
     // Settings uris
     private final Uri MODE_URI = Settings.System.getUriFor(
-            OmniSettings.CHARGING_CONTROL_MODE);
+            OmniSettings.OMNI_CHARGING_CONTROL_MODE);
     private final Uri LIMIT_URI = Settings.System.getUriFor(
-            OmniSettings.CHARGING_CONTROL_LIMIT);
+            OmniSettings.OMNI_CHARGING_CONTROL_LIMIT);
     private final Uri ENABLED_URI = Settings.System.getUriFor(
-            OmniSettings.CHARGING_CONTROL_ENABLED);
+            OmniSettings.OMNI_CHARGING_CONTROL_ENABLED);
     private final Uri START_TIME_URI = Settings.System.getUriFor(
-            OmniSettings.CHARGING_CONTROL_START_TIME);
+            OmniSettings.OMNI_CHARGING_CONTROL_START_TIME);
     private final Uri TARGET_TIME_URI = Settings.System.getUriFor(
-            OmniSettings.CHARGING_CONTROL_TARGET_TIME);
+            OmniSettings.OMNI_CHARGING_CONTROL_TARGET_TIME);
 
     // Internal state
     private float mBatteryPct = 0;
@@ -183,7 +183,7 @@ public class ChargingControlController extends OmniRomHealthFeature {
     }
 
     public boolean setEnabled(boolean enabled) {
-        putBoolean(OmniSettings.CHARGING_CONTROL_ENABLED, enabled);
+        putBoolean(OmniSettings.OMNI_CHARGING_CONTROL_ENABLED, enabled);
         return true;
     }
 
@@ -196,7 +196,7 @@ public class ChargingControlController extends OmniRomHealthFeature {
             return false;
         }
 
-        putInt(OmniSettings.CHARGING_CONTROL_MODE, mode);
+        putInt(OmniSettings.OMNI_CHARGING_CONTROL_MODE, mode);
         return true;
     }
 
@@ -209,7 +209,7 @@ public class ChargingControlController extends OmniRomHealthFeature {
             return false;
         }
 
-        putInt(OmniSettings.CHARGING_CONTROL_START_TIME, time);
+        putInt(OmniSettings.OMNI_CHARGING_CONTROL_START_TIME, time);
         return true;
     }
 
@@ -222,7 +222,7 @@ public class ChargingControlController extends OmniRomHealthFeature {
             return false;
         }
 
-        putInt(OmniSettings.CHARGING_CONTROL_TARGET_TIME, time);
+        putInt(OmniSettings.OMNI_CHARGING_CONTROL_TARGET_TIME, time);
         return true;
     }
 
@@ -235,7 +235,7 @@ public class ChargingControlController extends OmniRomHealthFeature {
             return false;
         }
 
-        putInt(OmniSettings.CHARGING_CONTROL_LIMIT, limit);
+        putInt(OmniSettings.OMNI_CHARGING_CONTROL_LIMIT, limit);
         return true;
     }
 
@@ -619,19 +619,19 @@ public class ChargingControlController extends OmniRomHealthFeature {
 
     private void handleSettingChange() {
         mConfigEnabled = Settings.System.getInt(mContentResolver,
-                OmniSettings.CHARGING_CONTROL_ENABLED, 0)
+                OmniSettings.OMNI_CHARGING_CONTROL_ENABLED, 0)
                 != 0;
         mConfigLimit = Settings.System.getInt(mContentResolver,
-                OmniSettings.CHARGING_CONTROL_LIMIT,
+                OmniSettings.OMNI_CHARGING_CONTROL_LIMIT,
                 mDefaultLimit);
         mConfigMode = Settings.System.getInt(mContentResolver,
-                OmniSettings.CHARGING_CONTROL_MODE,
+                OmniSettings.OMNI_CHARGING_CONTROL_MODE,
                 mDefaultMode);
         mConfigStartTime = Settings.System.getInt(mContentResolver,
-                OmniSettings.CHARGING_CONTROL_START_TIME,
+                OmniSettings.OMNI_CHARGING_CONTROL_START_TIME,
                 mDefaultStartTime);
         mConfigTargetTime = Settings.System.getInt(mContentResolver,
-                OmniSettings.CHARGING_CONTROL_TARGET_TIME,
+                OmniSettings.OMNI_CHARGING_CONTROL_TARGET_TIME,
                 mDefaultTargetTime);
 
         // Cancel notification, so that it can be updated later

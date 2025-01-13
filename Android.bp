@@ -77,6 +77,7 @@ java_library {
     srcs: [
         "src/**/*.java",
         "sdk/**/*.java",
+        "sdk/**/I*.aidl",
 
         // For the generated R.java and Manifest.java
         ":omnirom-res{.aapt.srcjar}",
